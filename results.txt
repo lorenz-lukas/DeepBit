@@ -1,0 +1,17 @@
+
+
+SVM
+TIPO|KERNEL|TECNICATREINAMENTO|NBITS|RESULTADO
+	Erro estimado apos cross validation kfold de K = 10:  media | gaussiana | one vs all | 32 | 0.5774
+	Erro estimado apos cross validation kfold de K = 10:  mediana | gaussiana | one vs all | 32 | 0.5681
+	Erro estimado apos cross validation kfold de K = 10:  media | gaussiana | one vs all | 16 | 0.7104
+	Erro estimado apos cross validation kfold de K = 10:  mediana | gaussiana | one vs all | 16 | 0.7049
+	Erro estimado apos cross validation kfold de K = 10:  media | gaussiana | one vs all | 64 | 0.7020
+	Erro estimado apos cross validation kfold de K = 10:  mediana | gaussiana | one vs all | 64 | 0.7025
+
+	Erro estimado apos cross validation kfold de K = 10:  media | gaussiana | one vs one | 32 | 0.5995
+	Erro estimado apos cross validation kfold de K = 10:  mediana | gaussiana | one vs one | 32 | 0.5931
+	Erro estimado apos cross validation kfold de K = 10:  media | gaussiana | one vs one | 16 | 0.6799
+	Erro estimado apos cross validation kfold de K = 10:  mediana | gaussiana | one vs one | 16 | 0.6794
+	Erro estimado apos cross validation kfold de K = 10:  media | gaussiana | one vs one | 64 | 0.8270
+	Erro estimado apos cross validation kfold de K = 10:  mediana | gaussiana | one vs one | 64 | 0.8279
