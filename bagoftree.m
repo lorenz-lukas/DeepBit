@@ -5,7 +5,7 @@
 %% Script que executa os comandos necessarios para aplicar o modelo deepbit treinado nas imagens de insetos
 % Sera dividido em 4 partes: Inicializacao dos dados, extracao dos
 % descritores binarios para todas imagens,
-% treinamento dos SVM e, por ultimo, o teste da eficiencia dos classificadores.
+% treinamento das arvores randomicas e, por ultimo, o teste da eficiencia dos classificadores.
 
 %% Inicializacao dos dados
 % Parte do script que vai preparar os dados
@@ -106,7 +106,7 @@ binarioImagensMedia = double(binarioImagensMedia); % converte de logical para do
 binarioImagensMediana = (resultDeepBitCrop > medianBin);
 binarioImagensMediana = double(binarioImagensMediana); % converte de logical para double
 
-%% Treinamento da SVM com cross validation e usando media
+%% Treinamento da bag of tree usando media
 
 % Le o arquivo que contem as labels de todas as classes
 classes = read_cell('./labels.txt');
@@ -116,39 +116,32 @@ classes = read_cell('./labels.txt');
 rng(1)
 disp('Treino com media');
 
-options = statset('UseParallel',true);
-t = templateSVM('KernelFunction', 'gaussian'); % normaliza os dados
-%t = templateKNN('NumNeighbors',5, 'Distance', 'mahalanobis');
-%SVMClassifierMedia = fitcecoc(binarioImagensMedia, classes, 'Coding', 'onevsall', 'Learners', t, 'Options', options);
 tic
-SVMClassifierMedia = fitcecoc(binarioImagensMedia, classes, 'Coding', 'onevsall', 'Learners', t);
+rng(1); % For reproducibility
+treeMdlMedia = TreeBagger(300, binarioImagensMedia, classes,'OOBPred','On',...
+    'Method','classification');
 toc
 
-tic
-CVClassifier = crossval(SVMClassifierMedia);
-toc
+%% Treinamento da bag of tree usando mediana
 
-estErr1 = kfoldLoss(CVClassifier)
-
-%% Teste da eficiencia dos classificadores
-% testando classificador com cross validation
-resultCV = kfoldPredict(CVClassifier);
-
-%% Treinamento da SVM com cross validation e usando mediana
 disp('Treino com mediana');
 
-options = statset('UseParallel',true);
-t = templateSVM('KernelFunction', 'gaussian'); % normaliza os dados
-%t = templateKNN('NumNeighbors',50, 'Distance', 'cosine');
-% SVMClassifierMediana = fitcecoc(binarioImagensMediana, classes, 'Coding', 'onevsall', 'Learners', t, 'Options', options);
 tic
-SVMClassifierMediana = fitcecoc(binarioImagensMediana, classes, 'Coding', 'onevsall', 'Learners', t);
+treeMdlMediana = TreeBagger(300, binarioImagensMediana, classes,'OOBPred','On',...
+    'Method','classification');
 toc
 
-tic
-CVClassifierMediana = crossval(SVMClassifierMediana);
-toc
+figure;
+oobErrorBaggedEnsemble = oobError(treeMdlMedia);
+plot(oobErrorBaggedEnsemble)
+title('Media');
+xlabel 'Number of grown trees';
+ylabel 'Out-of-bag classification error';
 
-estErr2 = kfoldLoss(CVClassifierMediana)
-resultCVMediana = kfoldPredict(CVClassifierMediana);
+figure;
+oobErrorBaggedEnsemble = oobError(treeMdlMediana);
+plot(oobErrorBaggedEnsemble)
+title('Mediana');
+xlabel 'Number of grown trees';
+ylabel 'Out-of-bag classification error';
 
