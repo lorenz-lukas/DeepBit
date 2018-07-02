@@ -39,3 +39,5 @@ media | 400 | 16 | 0.6777
 mediana | 400 | 16 | 0.6804
 media | 400 | 64 | 0.4931
 mediana | 400 | 64 | 0.496
+
+Deepbit deu 0.4407

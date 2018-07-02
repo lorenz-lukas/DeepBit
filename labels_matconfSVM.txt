@@ -1,0 +1,10 @@
+Ordem de 1 a 8:
+
+araneae
+coleoptera
+diptera
+hemiptera
+hymenoptera
+isoptera
+lepidoptera
+orthoptera

@@ -118,7 +118,7 @@ disp('Treino com media');
 
 tic
 rng(1); % For reproducibility
-treeMdlMedia = TreeBagger(1000, binarioImagensMedia, classes,'OOBPred','On',...
+treeMdlMedia = TreeBagger(400, binarioImagensMedia, classes,'OOBPred','On',...
     'Method','classification');
 toc
 
@@ -127,21 +127,20 @@ toc
 disp('Treino com mediana');
 
 tic
-treeMdlMediana = TreeBagger(1000, binarioImagensMediana, classes,'OOBPred','On',...
+treeMdlMediana = TreeBagger(400, binarioImagensMediana, classes,'OOBPred','On',...
     'Method','classification');
 toc
 
 figure;
 oobErrorBaggedEnsemble = oobError(treeMdlMedia);
-plot(oobErrorBaggedEnsemble)
-title('Media');
+oobErrorBaggedEnsemble1 = oobError(treeMdlMediana);
+plot(oobErrorBaggedEnsemble);
+hold on
+plot(oobErrorBaggedEnsemble1);
+hold off
+title('Media x Mediana');
+legend('Media','Mediana', 'Location', 'SE');
 xlabel 'Number of grown trees';
 ylabel 'Out-of-bag classification error';
 
-figure;
-oobErrorBaggedEnsemble = oobError(treeMdlMediana);
-plot(oobErrorBaggedEnsemble)
-title('Mediana');
-xlabel 'Number of grown trees';
-ylabel 'Out-of-bag classification error';
 
