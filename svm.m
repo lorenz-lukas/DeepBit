@@ -19,7 +19,7 @@ addpath(genpath(pwd));
 addpath('../cvpr16-deepbit/matlab');
 % Mude firsttime para 1, caso seja a primeira vez que esteja rodando o
 % codigo
-firstTime = 0;
+firstTime = 1;
 % Mude modelOption para 1 se quiser usar o modelo que gera 16 bits, 2 32
 % bits e 3 64 bits. Por default eh 32
 modelOption = 2;

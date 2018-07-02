@@ -1,0 +1,68 @@
+Media 32: -0.2846
+Mediana 32: -0.2873
+
+Media 16: -0.3232
+Mediana 16: -0.4101
+
+Media 64: -0.1565
+Mediana 64: -0.1477
+
+-Araneae
+
+Imagem: 
+16:
+32:
+64:	
+
+-Coleoptera
+
+Imagem:
+16:
+32:
+64:
+
+-Diptera
+
+Imagem:
+16:
+32:
+64:
+
+-Hemiptera
+
+Imagem:
+16:
+32:
+64:
+
+-Hymenoptera
+
+Imagem: Imagens/Hymenoptera/5497038.jpg
+Media 16: 0010100011011101
+Mediana 16: 0010110011111101
+Media 32: 01001111100010011000010110111011
+Mediana 32: 01001111100010011000010110111011
+Media 64: 1000010100000001011011110101011110001111111000001101000011100011
+Mediana 64: 1000010100000001011011110101011110001111110000001101000011100011
+
+-Isoptera
+
+Imagem:
+16:
+32:
+64:
+
+-Lepidoptera
+
+Imagem:
+16:
+32:
+64:
+
+-Orthoptera
+
+Imagem:
+16:
+32:
+64:
+
