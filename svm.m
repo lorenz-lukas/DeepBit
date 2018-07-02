@@ -22,7 +22,7 @@ addpath('../cvpr16-deepbit/matlab');
 firstTime = 0;
 % Mude modelOption para 1 se quiser usar o modelo que gera 16 bits, 2 32
 % bits e 3 64 bits. Por default eh 32
-modelOption = 3;
+modelOption = 2;
 switch modelOption
         case 1
             % modelo deepbit

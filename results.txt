@@ -33,19 +33,9 @@ mediana | 300 | 16 | 0.6822
 media | 300 | 64 | 0.4954
 mediana | 300 | 64 | 0.5044
 
-media | 400 | 32 | 0.
-mediana | 400 | 32 | 0.
-media | 400 | 16 | 0.
-mediana | 400 | 16 | 0.
-media | 400 | 64 | 0.
-mediana | 400 | 64 | 0.
-
-
-media | 500 | 32 | 0.
-mediana | 500 | 32 | 0.
-media | 500 | 16 | 0.
-mediana | 500 | 16 | 0.
-media | 500 | 64 | 0
-mediana | 500 | 64 | 0
-
-
+media | 400 | 32 | 0.5695
+mediana | 400 | 32 | 0.569
+media | 400 | 16 | 0.6777
+mediana | 400 | 16 | 0.6804
+media | 400 | 64 | 0.4931
+mediana | 400 | 64 | 0.496

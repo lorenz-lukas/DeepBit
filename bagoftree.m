@@ -118,7 +118,7 @@ disp('Treino com media');
 
 tic
 rng(1); % For reproducibility
-treeMdlMedia = TreeBagger(300, binarioImagensMedia, classes,'OOBPred','On',...
+treeMdlMedia = TreeBagger(1000, binarioImagensMedia, classes,'OOBPred','On',...
     'Method','classification');
 toc
 
@@ -127,7 +127,7 @@ toc
 disp('Treino com mediana');
 
 tic
-treeMdlMediana = TreeBagger(300, binarioImagensMediana, classes,'OOBPred','On',...
+treeMdlMediana = TreeBagger(1000, binarioImagensMediana, classes,'OOBPred','On',...
     'Method','classification');
 toc
 
